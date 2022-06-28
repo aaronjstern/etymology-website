@@ -80,6 +80,8 @@ app.get("/:word", async (req, res) => {
     });
 });
 
-app.listen(8080, () => {
-  console.log("LISTENING ON 8080");
-});
+const port = process.env.PORT || 8080;
+
+app.listen(port, () => {
+  console.log("LISTENING ON " + port);
+});ç
