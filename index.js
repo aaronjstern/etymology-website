@@ -10,7 +10,9 @@ const { text } = require("cheerio/lib/api/manipulation");
 
 // const methodOverride = require("method-override");
 
-mongoose.connect("mongodb://localhost:27017/etymologydb");
+mongoose.connect(
+  "mongodb+srv://aaronjstern1:atomicbomb@cluster0.vzgvm.mongodb.net/etymologyDB?retryWrites=true&w=majority"
+);
 
 const db = mongoose.connection;
 
