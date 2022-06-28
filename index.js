@@ -48,17 +48,17 @@ app.use(express.json());
 
 // app.use(methodOverride("_method"));
 
-app.get("/search", (req, res) => {
+app.get("/", (req, res) => {
   res.render("index.ejs");
 });
 
-app.post("/search", (req, res) => {
+app.post("/", (req, res) => {
   console.log(req.body);
   const { word } = req.body;
-  res.redirect(`/search/${word}`);
+  res.redirect(`/${word}`);
 });
 
-app.get("/search/:word", async (req, res) => {
+app.get("/:word", async (req, res) => {
   const { word } = req.params;
   const oxford = await oxfordSearch(word);
   axios(`https://www.etymonline.com/word/${word}`)
